@@ -1,4 +1,10 @@
 Masstext::Application.routes.draw do
+  resources :texts
+  
+  match "/texts/new" => "texts#new"
+  
+  # root :to => 'texts#show'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
