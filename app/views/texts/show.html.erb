@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First name:</b>
+  <%= @text.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @text.last_name %>
+</p>
+
+<p>
+  <b>Phone number:</b>
+  <%= @text.phone_number %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%= @text.message %>
+<br>
+  <a href="https://api.tropo.com/1.0/sessions?action=create&token=1a45ffac1d14944d935e0fbc5f733d9b4f1da7d39c2055ba2b9d12cb371d143b6e8cdb7b9aa5f60ae14f6019&numberToDial=<%= @text.phone_number %>&msg=<%= @text.message %>">Send Text Now</a> |
+
+<%= link_to 'Edit', edit_text_path(@text) %> |
+<%= link_to 'Back', texts_path %>

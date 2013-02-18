@@ -1,0 +1,29 @@
+<h1>Listing texts</h1>
+
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Phone number</th>
+    <th>Message</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @texts.each do |text| %>
+  <tr>
+    <td><%= text.first_name %></td>
+    <td><%= text.last_name %></td>
+    <td><%= text.phone_number %></td>
+    <td><%= text.message %></td>
+    <td><%= link_to 'Show', text %></td>
+    <td><%= link_to 'Edit', edit_text_path(text) %></td>
+    <td><%= link_to 'Destroy', text, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Text', new_text_path %>
