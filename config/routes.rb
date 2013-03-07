@@ -1,6 +1,6 @@
 Masstext::Application.routes.draw do
   resources :texts
-  
+  match "/" => "texts#index"
   match "/texts/new" => "texts#new"
   
   # root :to => 'texts#show'
