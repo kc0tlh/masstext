@@ -14,8 +14,6 @@
 ActiveRecord::Schema.define(:version => 20130218004025) do
 
   create_table "texts", :force => true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
     t.string   "phone_number"
     t.text     "message"
     t.datetime "created_at",   :null => false

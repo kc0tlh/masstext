@@ -2,8 +2,6 @@
 
 <table>
   <tr>
-    <th>First name</th>
-    <th>Last name</th>
     <th>Phone number</th>
     <th>Message</th>
     <th></th>
@@ -13,11 +11,9 @@
 
 <% @texts.each do |text| %>
   <tr>
-    <td><%= text.first_name %></td>
-    <td><%= text.last_name %></td>
     <td><%= text.phone_number %></td>
     <td><%= text.message %></td>
-    <td><%= link_to 'Show', text %></td>
+    <td><%= link_to 'View Text', text %></td>
     <td><%= link_to 'Edit', edit_text_path(text) %></td>
     <td><%= link_to 'Destroy', text, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
