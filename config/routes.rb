@@ -1,6 +1,7 @@
 Masstext::Application.routes.draw do
+  devise_for :users
   resources :texts
-  match "/" => "texts#index"
+  root :to => "texts#home"
   match "/texts/new" => "texts#new"
   
   # root :to => 'texts#show'
