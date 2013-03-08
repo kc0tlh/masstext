@@ -1,8 +1,13 @@
 Masstext::Application.routes.draw do
+  resources :homes
   devise_for :users
   resources :texts
-  root :to => "texts#home"
-  match "/texts/new" => "texts#new"
+
+root to: "texts#index", constraints: lambda { |r| r.env["warden"].authenticate? }
+root to: "homes#index"
+
+  match "texts/new" => "texts#new"
+  match "home" => "homes#index"
   
   # root :to => 'texts#show'
 

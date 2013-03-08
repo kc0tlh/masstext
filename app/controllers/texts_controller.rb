@@ -1,18 +1,10 @@
 class TextsController < ApplicationController
  # Basic HTTP Auth. Replaced by Devise
  # http_basic_authenticate_with :name => "user", :password => "password"
- 
- def route 
-  if !user_signed_in? == False
-    redirect_to :controller=>'texts', :action => 'home'
-    end
-  end
 before_filter :authenticate_user!
-
   # GET /texts
   # GET /texts.json
   def index
-   
     @texts = Text.all
 
     respond_to do |format|
